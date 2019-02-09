@@ -24,11 +24,11 @@ const isValidQuery = (query) => {
 // Format the parsed URL query with default values.
 const formatUrlQuery = (parsedUrlQuery, format) => {
   if (!isValidQuery(parsedUrlQuery)) {
-    throw new TypeError('parsedUrlQuery') // todo
+    throw new TypeError('parsedUrlQuery is not a valid object.')
   }
 
   if (!isValidQuery(format)) {
-    throw new TypeError('format') // todo
+    throw new TypeError('format is not a valid object.')
   }
 
   return Object.keys(format).reduce((formatted, key) => {
