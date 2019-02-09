@@ -21,6 +21,9 @@
     "url": "https://github.com/yuheiy/format-url-query/issues"
   },
   "homepage": "https://github.com/yuheiy/format-url-query#readme",
+  "dependencies": {
+    "@types/node": "^10.12.24"
+  },
   "devDependencies": {
     "ava": "^1.2.1",
     "husky": "^1.3.1",
