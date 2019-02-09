@@ -1,0 +1,33 @@
+{
+  "name": "@yuheiy/format-url-query",
+  "version": "0.0.0",
+  "description": "Format the parsed URL query with default values.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuheiy/format-url-query.git"
+  },
+  "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yuheiy.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuheiy/format-url-query/issues"
+  },
+  "homepage": "https://github.com/yuheiy/format-url-query#readme",
+  "devDependencies": {
+    "ava": "^1.2.1",
+    "husky": "^1.3.1",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
