@@ -1,6 +1,6 @@
 {
   "name": "@yuheiy/format-url-query",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Format the parsed URL query with default values.",
   "main": "index.js",
   "types": "index.d.ts",
