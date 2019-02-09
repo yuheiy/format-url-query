@@ -47,7 +47,7 @@ const formatUrlQuery = (parsedUrlQuery, format) => {
       }
 
       if (expectedType === 'array' && actualType === 'string') {
-        return value ? [value] : []
+        return value ? [value] : defaultValue
       }
 
       if (expectedType === 'array' && actualType === 'array') {
