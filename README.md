@@ -63,6 +63,8 @@ formatUrlQuery(parse('tag=html&tag=css&debug=1'), {
 
 ### formatUrlQuery(parsedUrlQuery, format)
 
+Returns an object of the same type as the `format`.
+
 #### parsedUrlQuery
 
 Type: `{ [key: string]: string | string[] }`
