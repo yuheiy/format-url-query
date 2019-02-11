@@ -33,25 +33,27 @@ const formatUrlQuery = (parsedUrlQuery, format) => {
 
   return Object.keys(format).reduce((formatted, key) => {
     const defaultValue = format[key].slice()
-    const value = (parsedUrlQuery[key] || '').slice()
-    const expectedType = Array.isArray(defaultValue) ? 'array' : 'string'
-    const actualType = Array.isArray(value) ? 'array' : 'string'
+    const actualValue = (parsedUrlQuery[key] || '').slice()
+    const isExpectedTypeArray = Array.isArray(defaultValue)
+    const isExpectedTypeString = !isExpectedTypeArray
+    const isActualTypeArray = Array.isArray(actualValue)
+    const isActualTypeString = !isActualTypeArray
 
     const assignedValue = (() => {
-      if (expectedType === 'string' && actualType === 'string') {
-        return value || defaultValue
+      if (isExpectedTypeString && isActualTypeString) {
+        return actualValue || defaultValue
       }
 
-      if (expectedType === 'string' && actualType === 'array') {
-        return value[0] || defaultValue
+      if (isExpectedTypeString && isActualTypeArray) {
+        return actualValue[0] || defaultValue
       }
 
-      if (expectedType === 'array' && actualType === 'string') {
-        return value ? [value] : defaultValue
+      if (isExpectedTypeArray && isActualTypeString) {
+        return actualValue ? [actualValue] : defaultValue
       }
 
-      if (expectedType === 'array' && actualType === 'array') {
-        return value.length ? value : defaultValue
+      if (isExpectedTypeArray && isActualTypeArray) {
+        return actualValue.length ? actualValue : defaultValue
       }
     })()
 
