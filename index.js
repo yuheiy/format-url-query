@@ -21,6 +21,11 @@ const isValidQuery = (query) => {
   return typeof query === 'object' && values(query).every(isValidValueOfQuery)
 }
 
+// Shallow copy if type of `value` is array.
+const cloneIfArray = (value) => {
+  return Array.isArray(value) ? [...value] : value
+}
+
 // Format the parsed URL query with default values.
 const formatUrlQuery = (parsedUrlQuery, format) => {
   if (!isValidQuery(parsedUrlQuery)) {
@@ -32,8 +37,8 @@ const formatUrlQuery = (parsedUrlQuery, format) => {
   }
 
   return Object.keys(format).reduce((formatted, key) => {
-    const defaultValue = format[key].slice()
-    const actualValue = (parsedUrlQuery[key] || '').slice()
+    const defaultValue = cloneIfArray(format[key])
+    const actualValue = cloneIfArray(parsedUrlQuery[key] || '')
     const isExpectedTypeArray = Array.isArray(defaultValue)
     const isExpectedTypeString = !isExpectedTypeArray
     const isActualTypeArray = Array.isArray(actualValue)
