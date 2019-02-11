@@ -133,6 +133,20 @@ test('main', (t) => {
   t.deepEqual(
     formatUrlQuery(
       {
+        x: [''],
+      },
+      {
+        x: ['default'],
+      },
+    ),
+    {
+      x: [''],
+    },
+  )
+
+  t.deepEqual(
+    formatUrlQuery(
+      {
         x: [],
       },
       {
@@ -141,6 +155,20 @@ test('main', (t) => {
     ),
     {
       x: 'default',
+    },
+  )
+
+  t.deepEqual(
+    formatUrlQuery(
+      {
+        x: ['value'],
+      },
+      {
+        x: 'default',
+      },
+    ),
+    {
+      x: 'value',
     },
   )
 
