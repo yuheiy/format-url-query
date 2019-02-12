@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/yuheiy/format-url-query#readme",
   "dependencies": {
-    "@types/node": "^10.12.24"
+    "@types/node": "^11.9.0"
   },
   "devDependencies": {
     "ava": "^1.2.1",
